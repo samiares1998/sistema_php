@@ -21,8 +21,8 @@ function limpiar()
 {
 	$("#idcliente").val("");
 	$("#cliente").val("");
-	$("#serie_comprobante").val("");
-	$("#num_comprobante").val("");
+	$("#serie_comprobante_1").val("");
+	$("#num_comprobante_1").val("");
 	$("#impuesto").val("0");
 
 	$("#total_venta").val("");
@@ -165,8 +165,8 @@ function mostrar(idventa)
 		$("#idcliente").selectpicker('refresh');
 		$("#tipo_comprobante").val(data.tipo_comprobante);
 		$("#tipo_comprobante").selectpicker('refresh');
-		$("#serie_comprobante").val(data.serie_comprobante);
-		$("#num_comprobante").val(data.num_comprobante);
+		$("#serie_comprobante_1").val(data.serie_comprobante);
+		$("#num_comprobante_1").val(data.num_comprobante);
 		$("#fecha_hora").val(data.fecha);
 		$("#impuesto").val(data.impuesto);
 		$("#idventa").val(data.idventa);

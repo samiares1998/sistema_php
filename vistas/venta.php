@@ -71,18 +71,17 @@ if ($_SESSION['ventas']==1)
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Tipo Comprobante(*):</label>
                             <select name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required="">
-                               <option value="Boleta">Boleta</option>
-                               <option value="Factura">Factura</option>
-                               <option value="Ticket">Ticket</option>
+                               <option selectvalue="Factura">Factura</option>
                             </select>
                           </div>
                           <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
                             <label>Serie:</label>
-                            <input type="text" class="form-control" name="serie_comprobante" id="serie_comprobante" maxlength="7" placeholder="Serie">
+                            <input type="text" class="form-control" name="serie_comprobante_!" id="serie_comprobante_1" maxlength="7" placeholder="Serie" value="21">
                           </div>
                           <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
                             <label>Número:</label>
-                            <input type="text" class="form-control" name="num_comprobante" id="num_comprobante" maxlength="10" placeholder="Número" required="">
+                            <input type="text" class="form-control" name="num_comprobante_1" id="num_comprobante_1" maxlength="10"  value="jj">
+
                           </div>
                           <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
                             <label>Impuesto:</label>
@@ -183,6 +182,16 @@ else
 
 require 'footer.php';
 ?>
+<script type="text/javascript">
+
+const serie = document.getElementById('serie_comprobante_1');
+serie.value=""+Math.random().toString(36).slice(-8);
+
+const numero = document.getElementById('num_comprobante_1');
+numero.value=""+Math.random() * (1000 - 1000) + 1000;
+
+
+</script>
 <script type="text/javascript" src="scripts/venta.js"></script>
 <?php 
 }

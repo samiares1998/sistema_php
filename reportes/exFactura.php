@@ -23,9 +23,9 @@
         //Datos
         $logo = "logo.jpg";
         $ext_logo = "jpg";
-        $empresa = "SOLUCIONES TECNOLOGICAS";
+        $empresa = "EXCESIVO JEANS";
         $documento = "09912002345";
-        $direccion = "Changolandia, Conocido 1279";
+        $direccion = "";
         $telefono = "9789267890";
         $email = "empresa@gmail.com";
 
@@ -117,10 +117,10 @@
         require_once 'Letras.php';
         $v = new EnLetras();
 
-        $con_letra = strtoupper(
-            $v->ValorEnLetras($regv->total_venta,"PESOS MEXICANOS")
-        );
-        $pdf->addCadreTVAs("---".$con_letra);
+     //   $con_letra = strtoupper(
+     //       $v->ValorEnLetras($regv->total_venta,"PESOS COLOMBIANOS")
+     //   );
+     //   $pdf->addCadreTVAs("---".$con_letra);
 
         //Mostramos el impuesto
         $pdf->addTVAs(

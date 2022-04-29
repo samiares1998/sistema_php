@@ -66,9 +66,7 @@
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Tipo Documento:</label>
                                 <select name="tipo_documento" id="tipo_documento" class="form-control select-picker" required>
-                                    <option value="DNI">DNI</option>
-                                    <option value="RUC">RUC</option>
-                                    <option value="CEDULA">CEDULA</option>
+                                    <option select value="DNI">NIT</option>
                                 </select>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">

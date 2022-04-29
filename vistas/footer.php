@@ -2,7 +2,7 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.3.0
         </div>
-        <strong>Copyright &copy; 2013-2017 <a href="#">AdminLTE</a>.</strong> All rights reserved.
+        <strong>By Sami Arevalo<a href="#"></a>.</strong> 
     </footer>    
     <!-- jQuery 3.1.1 -->
     <script src="../public/js/jquery-3.1.1.min.js"></script>
