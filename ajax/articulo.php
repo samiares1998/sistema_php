@@ -60,6 +60,9 @@
             $rspta = $articulo->listar();
             $data = Array();
             while ($reg = $rspta->fetch_object()) {
+              
+                $imagen = $reg->imagen;
+               if(!empty($prueba)){
                 $data[] = array(
                     "0"=> ($reg->condicion) ? 
                         '<button class="btn btn-warning" onclick="mostrar('.$reg->idarticulo.')"><li class="fa fa-pencil"></li></button>'.
@@ -78,6 +81,26 @@
                          :      
                          '<span class="label bg-red">Desactivado</span>'
                 );
+               }else{
+                $data[] = array(
+                    "0"=> ($reg->condicion) ? 
+                        '<button class="btn btn-warning" onclick="mostrar('.$reg->idarticulo.')"><li class="fa fa-pencil"></li></button>'.
+                        ' <button class="btn btn-danger" onclick="desactivar('.$reg->idarticulo.')"><li class="fa fa-close"></li></button>'
+                        :
+                        '<button class="btn btn-warning" onclick="mostrar('.$reg->idarticulo.')"><li class="fa fa-pencil"></li></button>'.
+                        ' <button class="btn btn-primary" onclick="activar('.$reg->idarticulo.')"><li class="fa fa-check"></li></button>'
+                        ,
+                    "1"=>$reg->nombre,
+                    "2"=>$reg->categoria,
+                    "3"=>$reg->codigo,
+                    "4"=>$reg->stock,
+                    "5"=>"<p>imagen no disponible</p>",
+                    "6"=>($reg->condicion) ?
+                         '<span class="label bg-green">Activado</span>'
+                         :      
+                         '<span class="label bg-red">Desactivado</span>'
+                );
+            }
             }
             $results = array(
                 "sEcho"=>1, //Informacion para el datable

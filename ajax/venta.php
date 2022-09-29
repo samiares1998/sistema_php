@@ -135,6 +135,12 @@ switch ($_GET["op"]){
  		$data= Array();
 
  		while ($reg=$rspta->fetch_object()){
+			$imagen = $reg->imagen;
+			if(!empty($prueba)){
+				$imagen="<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px' >";
+			}else{
+				$imagen="<p>imagen no disponible</p>";
+			}
  			$data[]=array(
  				"0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idarticulo.',\''.$reg->nombre.'\',\''.$reg->precio_venta.'\')"><span class="fa fa-plus"></span></button>',
  				"1"=>$reg->nombre,
@@ -142,7 +148,7 @@ switch ($_GET["op"]){
  				"3"=>$reg->codigo,
  				"4"=>$reg->stock,
  				"5"=>$reg->precio_venta,
- 				"6"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px' >"
+ 				"6"=>$imagen
  				);
  		}
  		$results = array(

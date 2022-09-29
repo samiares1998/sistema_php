@@ -65,20 +65,15 @@
                   <span class="hidden-xs"><?php echo $_SESSION['nombre']; ?></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <!-- User image -->
                   <li class="user-header">
-                    <img src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" class="img-circle" alt="User Image">
-                    <p>
-                      Desarrollando Software
-                      <small>www.google.com</small>
-                    </p>
+                  <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Cerrar</a>
                   </li>
                   
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     
                     <div class="pull-right">
-                      <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Cerrar</a>
+                     
                     </div>
                   </li>
                 </ul>
@@ -89,6 +84,12 @@
 
         </nav>
       </header>
+      <style>
+        .myDiv {
+          color:#8aa4af;
+          background-color: #394e63;
+        }
+      </style>
       <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
@@ -116,10 +117,10 @@
                       <span>Almacén</span>
                       <i class="fa fa-angle-left pull-right"></i>
                     </a>
-                    <ul class="treeview-menu">
-                      <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Artículos</a></li>
-                      <li><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorías</a></li>
-                    </ul>
+                
+                      <li><a class="myDiv" href="articulo.php"><i class="fa fa-circle-o"></i> Artículos</a></li>
+                      <li><a  class="myDiv" href="categoria.php"><i class="fa fa-circle-o"></i> Categorías</a></li>
+                
                   </li>'
                  ;
               }
@@ -132,10 +133,10 @@
                       <span>Compras</span>
                       <i class="fa fa-angle-left pull-right"></i>
                     </a>
-                    <ul class="treeview-menu">
-                      <li><a href="ingreso.php"><i class="fa fa-circle-o"></i> Ingresos</a></li>
-                      <li><a href="proveedor.php"><i class="fa fa-circle-o"></i> Proveedores</a></li>
-                    </ul>
+                   
+                      <li><a class="myDiv" href="ingreso.php"><i class="fa fa-circle-o"></i> Ingreso de medicina</a></li>
+                      <li><a class="myDiv" href="proveedor.php"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                  
                   </li>'
                  ;
               }
@@ -148,10 +149,10 @@
                       <span>Ventas</span>
                       <i class="fa fa-angle-left pull-right"></i>
                     </a>
-                    <ul class="treeview-menu">
-                      <li><a href="venta.php"><i class="fa fa-circle-o"></i> Ventas</a></li>
-                      <li><a href="cliente.php"><i class="fa fa-circle-o"></i> Clientes</a></li>
-                    </ul>
+                   
+                      <li><a class="myDiv" href="venta.php"><i class="fa fa-circle-o"></i> Ventas</a></li>
+                      <li><a class="myDiv" href="cliente.php"><i class="fa fa-circle-o"></i> Clientes</a></li>
+                    
                   </li>'
                  ;
               }
@@ -164,9 +165,8 @@
                       <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                      <li><a href="usuario.php"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                      <li><a href="permiso.php"><i class="fa fa-circle-o"></i> Permisos</a></li>
-                      
+                      <li><a class="myDiv" href="usuario.php"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                      <li><a class="myDiv" href="permiso.php"><i class="fa fa-circle-o"></i> Permisos</a></li>
                     </ul>
                   </li>'
                  ;
@@ -179,9 +179,9 @@
                       <i class="fa fa-bar-chart"></i> <span>Consulta Compras</span>
                       <i class="fa fa-angle-left pull-right"></i>
                     </a>
-                    <ul class="treeview-menu">
-                      <li><a href="comprasfecha.php"><i class="fa fa-circle-o"></i> Consulta Compras</a></li>                
-                    </ul>
+                 
+                      <li><a class="myDiv" href="comprasfecha.php"><i class="fa fa-circle-o"></i> Consulta Compras</a></li>                
+                   
                   </li>'
                  ;
               }
@@ -193,10 +193,10 @@
                     <a href="#">
                       <i class="fa fa-bar-chart"></i> <span>Consulta Ventas</span>
                       <i class="fa fa-angle-left pull-right"></i>
-                    </a>
-                    <ul class="treeview-menu">
-                      <li><a href="ventasfechacliente.php"><i class="fa fa-circle-o"></i> Consulta Ventas</a></li>                
-                    </ul>
+                   
+                  
+                      <li><a class="myDiv" href="ventasfechacliente.php"><i class="fa fa-circle-o"></i> Consulta Ventas</a></li>                
+                  
                   </li>'
                  ;
               }

@@ -157,7 +157,7 @@
                  <th>Categoria</th>
                  <th>Codigo</th>
                  <th>Stock</th>
-                 <th>Imagen</th>
+               
                </thead>
                <tbody>
 
@@ -168,7 +168,7 @@
                  <th>Categoria</th>
                  <th>Codigo</th>
                  <th>Stock</th>
-                 <th>Imagen</th>
+              
                </tfoot>
              </table>
            </div>
