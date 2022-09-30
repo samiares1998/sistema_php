@@ -76,7 +76,7 @@ if ($_SESSION['ventas']==1)
                           </div>
                           <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
                             <label>Serie:</label>
-                            <input type="text" class="form-control" name="serie_comprobante_!" id="serie_comprobante_1" maxlength="7" placeholder="Serie" value="21">
+                            <input type="text" class="form-control" name="serie_comprobante_1" id="serie_comprobante_1" maxlength="7" placeholder="Serie" value="21">
                           </div>
                           <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
                             <label>Número:</label>
@@ -89,7 +89,7 @@ if ($_SESSION['ventas']==1)
                           </div>
                           <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <a data-toggle="modal" href="#myModal">           
-                              <button id="btnAgregarArt" type="button" class="btn btn-primary"> <span class="fa fa-plus"></span> Agregar Artículos</button>
+                              <button id="btnAgregarArt" type="button" onClick="serie()" class="btn btn-primary"> <span class="fa fa-plus"></span> Agregar Artículos</button>
                             </a>
                           </div>
 
@@ -183,12 +183,14 @@ else
 require 'footer.php';
 ?>
 <script type="text/javascript">
-
+function serie() {
 const serie = document.getElementById('serie_comprobante_1');
-serie.value=""+Math.random().toString(36).slice(-8);
+serie.value="DRO";
 
 const numero = document.getElementById('num_comprobante_1');
-numero.value=""+Math.random() * (1000 - 1000) + 1000;
+numero.value=""+Math.floor(Math.random() * (10000 - 1000) + 1000);
+}
+
 
 
 </script>

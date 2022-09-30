@@ -119,7 +119,7 @@ switch ($_GET["op"]){
 		$persona = new Persona();
 
 		$rspta = $persona->listarC();
-
+		//echo '<option>Todos Los Clientes</option>';
 		while ($reg = $rspta->fetch_object())
 				{
 				echo '<option value=' . $reg->idpersona . '>' . $reg->nombre . '</option>';

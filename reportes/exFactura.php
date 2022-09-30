@@ -23,11 +23,11 @@
         //Datos
         $logo = "logo.jpg";
         $ext_logo = "jpg";
-        $empresa = "EXCESIVO JEANS";
-        $documento = "09912002345";
-        $direccion = "";
-        $telefono = "9789267890";
-        $email = "empresa@gmail.com";
+        $empresa = "DROGUERIA SAMYI SALUD Y BIENESTAR";
+        $documento = "1093796165";
+        $direccion = "La Fortaleza";
+        $telefono = "3115051416";
+        $email = "nohemi12-45@hotmail.com.com";
 
         //Obtenemos los datos de la cabecera
         require_once '../modelos/Venta.php';
