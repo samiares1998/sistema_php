@@ -14,6 +14,11 @@
 
     switch($_GET["op"])
     {
+        case 'buscar':
+            $rspta = $articulo->buscar($codigo);
+            echo json_encode($rspta);
+        break;
+
         case 'guardaryeditar':
 
             if(!file_exists($_FILES['imagen']['tmp_name']) || !is_uploaded_file($_FILES['imagen']['tmp_name']))
@@ -125,11 +130,7 @@
             }
         break;
 
-        case 'buscar':
-            require_once "../modelos/articulo.php";
-            $rspta = $articulo->buscar($codigo);
-            echo json_encode($rspta);
-        break;
+
     
                 
         

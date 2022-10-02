@@ -91,7 +91,7 @@
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                               <label>Codigo:</label>
-                              <input type="text" class="form-control" name="codigo" id="codigo" autocomplete="off" onchange="buscarArticulo(); placeholder="Codigo de barras">
+                              <input type="text" class="form-control" name="codigo" id="codigo" autocomplete="off" placeholder="Codigo de barras" onchange="buscarArticulo(this.value)" >
                               <button class="btn btn-success" type="button" onclick="generarbarcode()">Generar</button>
                               <button class="btn btn-info" type="button" onclick="imprimir()">Imprimir</button>
                               <div id="print">
@@ -131,6 +131,28 @@
   <script src="../public/js/JsBarcode.all.min.js"></script>
   <script src="../public/js/jquery.PrintArea.js"></script>
   <script src="./scripts/articulo.js"></script>
+  <script>
+   //Funcion que se ejecuta con el lector de barras 
+
+    function buscarArticulo(val){	
+        $.post(
+            "../ajax/articulo.php?op=buscar",
+            {codigo:val},
+            function(data,status)
+            {
+              console.log(data)
+                data = JSON.parse(data);
+                if(data==null){
+
+                }else{
+                  limpiar();
+                    alert("Producto ya existe por el mismo codigo");
+                }
+
+            }
+        );
+    }
+  </script>
 
 <?php
 
