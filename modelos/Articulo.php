@@ -7,6 +7,25 @@
         {
 
         }
+
+        public function buscarPrecio($idarticulo)
+        {
+            $sql = "SELECT 
+            a.idarticulo, 
+            a.idcategoria, 
+            a.codigo,
+            a.nombre,
+            a.stock,
+            a.descripcion,
+            a.imagen,
+            a.condicion, 
+            a.precio_venta
+            FROM articulo a 
+            where a.idarticulo='$idarticulo'";
+
+    return ejecutarConsultaSimpleFila($sql);
+        
+        }
         //METODO PARA LISTAR LOS REGISTROS
         public function buscar($codigo)
         {
@@ -47,7 +66,7 @@
                         '$imagen',
                         '1',
                         '$precio_venta')";
-          //  echo($sql);
+           
             return ejecutarConsulta($sql);
         }
 
@@ -61,7 +80,6 @@
                     descripcion = '$descripcion', 
                     imagen = '$imagen' 
                     WHERE idarticulo='$idarticulo'";
-            
             return ejecutarConsulta($sql);
         }
 
@@ -159,6 +177,7 @@
 
             return ejecutarConsulta($sql);
         }
+
     }
 
 ?>

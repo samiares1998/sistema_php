@@ -133,13 +133,19 @@ switch ($_GET["op"]){
 		$rspta=$articulo->listarActivosVenta();
  		//Vamos a declarar un array
  		$data= Array();
-
  		while ($reg=$rspta->fetch_object()){
 			$imagen = $reg->imagen;
+
 			if(!empty($prueba)){
 				$imagen="<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px' >";
 			}else{
 				$imagen="<p>imagen no disponible</p>";
+			}
+			if(empty($reg->precio_venta)){
+				$precio=$articulo->buscarPrecio($reg->idarticulo);
+				if($precio["precio_venta"]!=null){
+					$reg->precio_venta=$precio["precio_venta"];
+				}
 			}
  			$data[]=array(
  				"0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idarticulo.',\''.$reg->nombre.'\',\''.$reg->precio_venta.'\')"><span class="fa fa-plus"></span></button>',

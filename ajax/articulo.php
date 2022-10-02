@@ -59,6 +59,8 @@
 
         case 'mostrar':
             $rspta = $articulo->mostrar($idarticulo);
+           // $precio=$articulo->buscarPrecio($idarticulo);
+            //print($precio);
             echo json_encode($rspta);
         break;
 
