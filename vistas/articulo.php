@@ -47,7 +47,7 @@
                               <th>Nombre</th>
                               <th>Categoria</th>
                               <th>Codigo</th>
-                              <th>Stock</th>
+                              <th>Existencias</th>
                               
                               <th>Estado</th>
                             </thead>
@@ -59,8 +59,7 @@
                               <th>Nombre</th>
                               <th>Categoria</th>
                               <th>Codigo</th>
-                              <th>Stock</th>
-                              
+                              <th>Existencias</th>                 
                               <th>Estado</th>
                             </tfoot>
                           </table>
@@ -92,7 +91,7 @@
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                               <label>Codigo:</label>
-                              <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Codigo de barras">
+                              <input type="text" class="form-control" name="codigo" id="codigo" autocomplete="off" onchange="buscarArticulo(); placeholder="Codigo de barras">
                               <button class="btn btn-success" type="button" onclick="generarbarcode()">Generar</button>
                               <button class="btn btn-info" type="button" onclick="imprimir()">Imprimir</button>
                               <div id="print">

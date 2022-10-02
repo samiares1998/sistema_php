@@ -7,7 +7,26 @@
         {
 
         }
+        //METODO PARA LISTAR LOS REGISTROS
+        public function buscar($codigo)
+        {
+            $sql = "SELECT 
+                    a.idarticulo, 
+                    a.idcategoria, 
+                    c.nombre as categoria,
+                    a.codigo,
+                    a.nombre,
+                    a.stock,
+                    a.descripcion,
+                    a.imagen,
+                    a.condicion 
+                    FROM articulo a 
+                    INNER JOIN categoria c 
+                    ON a.idcategoria = c.idcategoria 
+                    where a.codigo='$codigo'";
 
+            return ejecutarConsulta($sql);
+        }
         public function insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen)
         {
             $sql = "INSERT INTO 

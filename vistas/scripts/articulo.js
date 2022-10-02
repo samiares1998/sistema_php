@@ -1,5 +1,26 @@
 var tabla;
 
+
+//Funcion que se ejecuta con el lector de barras 
+
+function buscarArticulo(){	
+    $.post(
+        "../ajax/articulo.php?op=buscar",
+        {codigo:document.getElementById('codigo')},
+        function(data,status)
+        {
+            data = JSON.parse(data);
+            if(data.length==0){
+
+            }else{
+                alert("Producto ya existe por el mismo codigo");
+            }
+
+        }
+    );
+}
+
+
 //Funcion que se ejecuta al inicio
 function init()
 {

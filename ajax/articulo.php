@@ -124,6 +124,15 @@
                       '</option>';
             }
         break;
+
+        case 'buscar':
+            require_once "../modelos/articulo.php";
+            $rspta = $articulo->buscar($codigo);
+            echo json_encode($rspta);
+        break;
+    
+                
+        
     }
 
 ?>
