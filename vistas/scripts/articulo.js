@@ -137,6 +137,7 @@ function mostrar(idarticulo)
         function(data,status)
         {
             data = JSON.parse(data);
+          
             mostrarform(true);
 
             $("#idcategoria").val(data.idcategoria);
@@ -148,7 +149,11 @@ function mostrar(idarticulo)
             $("#descripcion").val(data.descripcion);
 
             $("#imagenmuestra").show(); 
-            $("#imagenmuestra").attr("src","../files/articulos/"+data.imagen); //agregamos el atributo src para mostrar la imagen
+            if(data.imagen.length === 0){
+                $("#imagenmuestra").hide();
+            }else{
+                $("#imagenmuestra").attr("src","../files/articulos/"+data.imagen); //agregamos el atributo src para mostrar la imagen
+            }
 
             $("#imagenactual").val(data.imagen);
 

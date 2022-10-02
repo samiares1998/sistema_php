@@ -76,7 +76,7 @@
                               <select name="idcategoria" id="idcategoria" data-live-search="true" class="form-control selectpicker" required></select>
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <label>Stock:</label>
+                              <label>cantidad de existencias:</label>
                               <input type="number" class="form-control" name="stock" id="stock" placeholder="Stock" required>
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -90,14 +90,22 @@
                               <img src="" width="150px" height="120px" id="imagenmuestra">
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                              <label>Precio de venta:</label>
+                              <input type="number" class="form-control" name="precio_venta" id="precio_venta" maxlength="256" placeholder="Precio" required>
+                            </div>
+                            <hr>
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                               <label>Codigo:</label>
                               <input type="text" class="form-control" name="codigo" id="codigo" autocomplete="off" placeholder="Codigo de barras" onchange="buscarArticulo(this.value)" >
+                             <hr>
                               <button class="btn btn-success" type="button" onclick="generarbarcode()">Generar</button>
                               <button class="btn btn-info" type="button" onclick="imprimir()">Imprimir</button>
                               <div id="print">
                                 <svg id="barcode"></svg>
                               </div>
                             </div>
+                            <hr>
+                            <hr>
                             <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                               <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
 
@@ -146,12 +154,23 @@
 
                 }else{
                   limpiar();
-                    alert("Producto ya existe por el mismo codigo");
+                  bootbox.alert("Producto ya existe por el mismo codigo");
                 }
 
             }
         );
     }
+    //Not admit characteres
+    document.getElementById("precio_venta").onkeypress = function(e) {
+    var chr = String.fromCharCode(e.which);
+
+    if (".,></\":*?|".indexOf(chr) >= 0){
+      $("#precio_venta").val("");
+      bootbox.alert("Por favor, Digite el numero sin puntos ni comas");
+      return false;
+    }
+    return true
+    };
   </script>
 
 <?php

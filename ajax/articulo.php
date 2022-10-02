@@ -10,7 +10,8 @@
     $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
     $stock=isset($_POST["stock"])? limpiarCadena($_POST["stock"]):"";
     $descripcion=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
-    $imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
+    $imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):""; 
+    $precio_venta=isset($_POST["precio_venta"])? limpiarCadena($_POST["precio_venta"]):"";
 
     switch($_GET["op"])
     {
@@ -37,7 +38,7 @@
 
 
             if (empty($idarticulo)){
-                $rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen);
+                $rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$precio_venta);
                 echo $rspta ? "Aritculo registrado" : "Aritculo no se pudo registrar";
             }
             else {

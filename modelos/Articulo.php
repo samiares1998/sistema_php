@@ -25,7 +25,7 @@
 
             return ejecutarConsultaSimpleFila($sql);
         }
-        public function insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen)
+        public function insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$precio_venta)
         {
             $sql = "INSERT INTO 
                         articulo (
@@ -35,7 +35,8 @@
                             stock,
                             descripcion,
                             imagen,
-                            condicion
+                            condicion,
+                            precio_venta
                         ) 
                     VALUES (
                         '$idcategoria',
@@ -44,8 +45,9 @@
                         '$stock',
                         '$descripcion',
                         '$imagen',
-                        '1')";
-            
+                        '1',
+                        '$precio_venta')";
+          //  echo($sql);
             return ejecutarConsulta($sql);
         }
 
