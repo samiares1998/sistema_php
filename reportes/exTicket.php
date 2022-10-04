@@ -13,7 +13,9 @@
   if ($_SESSION['ventas']==1)
   {
 ?>
-    <html>
+    <html style="
+    height: 40%;
+">
       <head>
       <meta http-equiv="content-type" content="text/html; charset=utf-8" />
       <link href="../public/css/ticket.css" rel="stylesheet" type="text/css">
@@ -69,7 +71,7 @@
           </table>
           <br>
           <!-- Mostramos los detalles de la venta en el documento HTML -->
-          <table border="0" align="center" width="300px">
+          <table border="0" align="center" width="30px">
               <tr>
                   <td>CANT.</td>
                   <td>DESCRIPCIÓN</td>
