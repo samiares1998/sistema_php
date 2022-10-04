@@ -5,7 +5,7 @@ if (strlen(session_id()) < 1)
 require_once "../modelos/Venta.php";
 
 $venta=new Venta();
-
+$codigo=isset($_POST["codigo"])? limpiarCadena($_POST["codigo"]):"";
 $idventa=isset($_POST["idventa"])? limpiarCadena($_POST["idventa"]):"";
 $idcliente=isset($_POST["idcliente"])? limpiarCadena($_POST["idcliente"]):"";
 $idusuario=$_SESSION["idusuario"];
@@ -82,7 +82,7 @@ switch ($_GET["op"]){
 			{
 				$url = '../reportes/exFactura.php?id='; //Ruta del archivo exFactura
 			}
-
+			$url = '../reportes/exTicket.php?id=';
  			$data[]=array(
  				"0"=>(
 					 ($reg->estado=='Aceptado')?'<button class="btn btn-warning" onclick="mostrar('.$reg->idventa.')"><i class="fa fa-eye"></i></button>'.
@@ -136,7 +136,7 @@ switch ($_GET["op"]){
  		while ($reg=$rspta->fetch_object()){
 			$imagen = $reg->imagen;
 
-			if(!empty($prueba)){
+			if(!empty($imagen)){
 				$imagen="<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px' >";
 			}else{
 				$imagen="<p>imagen no disponible</p>";
@@ -163,6 +163,20 @@ switch ($_GET["op"]){
  			"iTotalDisplayRecords"=>count($data), //enviamos el total registros a visualizar
  			"aaData"=>$data);
  		echo json_encode($results);
+	break;
+	case 'buscarArticulo':
+		require_once "../modelos/Articulo.php";
+		$articulo=new Articulo();
+
+		$reg=$articulo->listarActivosByCodigo($codigo);
+			if(empty($reg["precio_venta"])){
+				$precio=$articulo->buscarPrecio($reg["idarticulo"]);
+				if($precio["precio_venta"]!=null){
+					$reg["precio_venta"]=$precio["precio_venta"];
+				}
+			}
+ 			
+ 		echo json_encode($reg);
 	break;
 }
 ?>

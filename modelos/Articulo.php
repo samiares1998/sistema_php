@@ -150,6 +150,36 @@
             return ejecutarConsulta($sql);
         }
 
+        //Listar registros activos
+        public function listarActivosByCodigo($codigo)
+        {
+            $sql = "SELECT 
+            a.idarticulo, 
+            a.idcategoria, 
+            c.nombre as categoria,
+            a.codigo,
+            a.nombre,
+            a.stock,
+            (
+                SELECT precio_venta 
+                FROM detalle_ingreso
+                WHERE idarticulo = a.idarticulo
+                ORDER BY iddetalle_ingreso 
+                desc limit 0,1 
+
+            ) as precio_venta, 
+            a.descripcion,
+            a.imagen,
+            a.condicion
+            FROM articulo a 
+            INNER JOIN categoria c 
+            ON a.idcategoria = c.idcategoria
+            WHERE a.condicion = '1'
+            and a.codigo='$codigo'";
+
+            return ejecutarConsultaSimpleFila($sql);
+        }
+
         public function listarActivosVenta()
         {
             $sql = "SELECT 

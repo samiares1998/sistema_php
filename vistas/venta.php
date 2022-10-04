@@ -142,8 +142,17 @@ if ($_SESSION['ventas']==1)
           <h4 class="modal-title">Seleccione un Artículo</h4>
         </div>
         <div class="modal-body">
+          <hr>
+        <label for="" style="
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+">Agregar Medicamentos :  <input type="search" id="venta_articulos" class="" placeholder="" aria-controls="tblarticulos"> </label>
+        
           <table id="tblarticulos" class="table table-striped table-bordered table-condensed table-hover">
+         
             <thead>
+           
                 <th>Opciones</th>
                 <th>Nombre</th>
                 <th>Categoría</th>
@@ -164,8 +173,11 @@ if ($_SESSION['ventas']==1)
                 <th>Precio Venta</th>
                 <th>Imagen</th>
             </tfoot>
+            
           </table>
+         
         </div>
+       
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>        
@@ -183,15 +195,35 @@ else
 require 'footer.php';
 ?>
 <script type="text/javascript">
-function serie() {
-const serie = document.getElementById('serie_comprobante_1');
-serie.value="DRO";
+  function serie() {
+  const serie = document.getElementById('serie_comprobante_1');
+  serie.value="DRO";
 
-const numero = document.getElementById('num_comprobante_1');
-numero.value=""+Math.floor(Math.random() * (10000 - 1000) + 1000);
-}
+  const numero = document.getElementById('num_comprobante_1');
+  numero.value=""+Math.floor(Math.random() * (10000 - 1000) + 1000);
+  }
 
+  //
+  $( "#venta_articulos" ).change(function() {
+    var val = $( "#venta_articulos" ).val();
+    $.post(
+            "../ajax/venta.php?op=buscarArticulo",
+            {codigo:val},
+            function(data,status)
+            {
+              console.log(data)
+                data = JSON.parse(data);
+                if(data==null){
+                  $( "#venta_articulos" ).val('');
+                  bootbox.alert("Producto no encontrado");
+                }else{
+                  agregarDetalle(data.idarticulo,data.nombre,data.precio_venta);
+                  $( "#venta_articulos" ).val('');
+                }
 
+            }
+        );
+  });
 
 </script>
 <script type="text/javascript" src="scripts/venta.js"></script>

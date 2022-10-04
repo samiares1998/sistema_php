@@ -24,10 +24,10 @@
         $logo = "logo.jpg";
         $ext_logo = "jpg";
         $empresa = "DROGUERIA SAMYI SALUD Y BIENESTAR";
-        $documento = "1093796165";
+        $documento = "60379483";
         $direccion = "La Fortaleza";
         $telefono = "3115051416";
-        $email = "nohemi12-45@hotmail.com.com";
+        $email = "nohemi12-45@hotmail.com";
 
         //Obtenemos los datos de la cabecera
         require_once '../modelos/Venta.php';

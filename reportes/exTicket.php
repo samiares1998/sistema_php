@@ -31,11 +31,11 @@
   $reg = $rspta->fetch_object();
 
   //Establecemos los datos de la empresa
-  $empresa = "SOLUCIONES TECNOLOGICAS";
-  $documento = "09912002345";
-  $direccion = "Changolandia, Conocido 1279";
-  $telefono = "9789267890";
-  $email = "empresa@gmail.com";
+  $empresa = "DROGUERIA SAMYI SALUD Y BIENESTAR";
+  $documento = "60379483";
+  $direccion = "La Fortaleza";
+  $telefono = "3115051416";
+  $email = "nohemi12-45@hotmail.com";
 
 ?>
           <div class="zona_impresion">
@@ -106,11 +106,9 @@
                 <td colspan="3" align="center">¡Gracias por su compra!</td>
               </tr>
               <tr>
-                <td colspan="3" align="center">SOLUCIONES TECNOLOGICAS</td>
+                <td colspan="3" align="center">Samyi Salud y Bienestar</td>
               </tr>
-              <tr>
-                <td colspan="3" align="center">Changolandia, Conocido 1279</td>
-              </tr>
+             
               
           </table>
           <br>
