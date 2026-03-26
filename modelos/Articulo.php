@@ -70,7 +70,7 @@
             return ejecutarConsulta($sql);
         }
 
-        public function editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen)
+        public function editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$precio_venta)
         {
             $sql = "UPDATE articulo SET 
                     idcategoria ='$idcategoria',
@@ -78,7 +78,8 @@
                     nombre = '$nombre', 
                     stock = '$stock', 
                     descripcion = '$descripcion', 
-                    imagen = '$imagen' 
+                    imagen = '$imagen',
+                    precio_venta = '$precio_venta' 
                     WHERE idarticulo='$idarticulo'";
             return ejecutarConsulta($sql);
         }

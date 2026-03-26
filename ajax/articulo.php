@@ -42,7 +42,7 @@
                 echo $rspta ? "Aritculo registrado" : "Aritculo no se pudo registrar";
             }
             else {
-                $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen);
+                $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$precio_venta);
                 echo $rspta ? "Articulo actualizado" : "Articulo no se pudo actualizar";
             }
         break;

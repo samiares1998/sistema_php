@@ -48,7 +48,7 @@
                               <th>Categoria</th>
                               <th>Codigo</th>
                               <th>Existencias</th>
-                              
+                              <th>Precio venta</th>
                               <th>Estado</th>
                             </thead>
                             <tbody>
@@ -59,7 +59,8 @@
                               <th>Nombre</th>
                               <th>Categoria</th>
                               <th>Codigo</th>
-                              <th>Existencias</th>                 
+                              <th>Existencias</th>  
+<th>Precio venta</th>							  
                               <th>Estado</th>
                             </tfoot>
                           </table>
@@ -91,7 +92,14 @@
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                               <label>Precio de venta:</label>
-                              <input type="number" class="form-control" name="precio_venta" id="precio_venta" maxlength="256" placeholder="Precio" required>
+<input type="number" class="form-control" 
+       name="precio_venta" 
+       id="precio_venta"
+       step="0.01"
+       min="0"
+       placeholder="Precio de venta"
+       required>
+
                             </div>
                             <hr>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">

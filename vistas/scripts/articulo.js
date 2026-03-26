@@ -131,22 +131,25 @@ function guardaryeditar(e)
 
 function mostrar(idarticulo)
 {
+     console.log("FUNCION MOSTRAR EJECUTADA", idarticulo);
     $.post(
         "../ajax/articulo.php?op=mostrar",
         {idarticulo:idarticulo},
         function(data,status)
         {
             data = JSON.parse(data);
-          
+          console.log(data);
             mostrarform(true);
 
             $("#idcategoria").val(data.idcategoria);
             $('#idcategoria').selectpicker('refresh');
-
+            //
+$("#precio_venta").val(data.precio_venta);
             $("#codigo").val(data.codigo);
             $("#nombre").val(data.nombre);
             $("#stock").val(data.stock);
             $("#descripcion").val(data.descripcion);
+            
 
             $("#imagenmuestra").show(); 
             if(data.imagen.length === 0){
